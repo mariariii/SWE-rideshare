@@ -8,33 +8,6 @@ class admin {
         this.lastName = lastName;     // Admin's last name
     }
 
-    // Getters
-    get adminId() { 
-        return this._adminId;
-    }
-
-    get firstName() { 
-        return this._firstName; 
-    }
-
-    get lastName() { 
-        return this._lastName; 
-    }
-
-    // Setters
-    set adminId(value) {
-        this._adminId = value; 
-    }
-
-    set firstName(value) { 
-        this._firstName = value; 
-    }
-
-    set lastName(value) { 
-        this._lastName = value; 
-    }
-
-
     // Method to view a report and mark it as reviewed
     viewReport(reportToView) {
         if (reportToView instanceof Report) {
@@ -53,8 +26,15 @@ class admin {
         }
     }
 
+    // Placeholder for issuing penalties (to be implemented)
+    issuePenalty(userToPenalize) {
+        if (userToPenalize instanceof User) {
+            console.log(`Penalty issued to user with AUC ID: ${userToPenalize.aucId}`);
+            // Add penalty logic here as needed
+        } else {
+            throw new Error('Invalid user object.');
+        }
+    }
 }
-
-//still have to do penalties
 
 module.exports = admin;
