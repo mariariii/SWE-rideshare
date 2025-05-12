@@ -10,6 +10,7 @@ const rideRoutes = require('./rideroute');
 const friendRoutes = require('./friendroute');
 const locationRoutes = require('./locationroute');
 const userRoutes = require('./userRoute');
+const smsRoutes = require('./smsRoute');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -155,7 +156,8 @@ app.use('/api', [
     rideRoutes,
     friendRoutes,
     locationRoutes,
-    userRoutes
+    userRoutes,
+    smsRoutes
   ]);
   
   // Real-time Socket.IO Handlers
