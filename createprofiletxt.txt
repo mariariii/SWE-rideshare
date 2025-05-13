@@ -1,0 +1,271 @@
+
+import ‘package: flutter/material.dart';
+
+import ‘package: equatable/equatable.dart';
+
+import '../../../core/app_export.dart';
+
+import '../models/create_account_one_model.dart at
+part 'create_account_one_event.dart ur)
+
+part 'create_account_one_state. dart ut)
+
+/// & bloc that manages the state of a CreateAccountOne according to the event t
+class CreateAccountOneBloc
+
+extends BloceCreateAccountOneEvent, CreateAccountOneState> {
+
+CreateAccountOneBloc(CreateAccountOneState initialState)
+
+: super(initialstate) {
+oneCreateAccountOneInitialEvent>(_onInitialize) ;
+oneChangePasswordVisibilityEvent>(_changePasswordVis ibility) ;
+oneChangeCheckBoxEvent>(_changeCheckBox) ;
+cnechangechechfyrEvert>{-changeChecKB0x) ;
+}
+
+_onInitialize(
+CreateAccountOneInitialEvent event,
+Emitter<CreateAccountOneState> emit,
+) async {
+emit(
+state. copyWith(
+firstNameController: TextEditingController(),
+lastNameController: TextEditingController(),
+passwordController: TextEditingCont roller(),
+confirmpasswordController: TextEditingController(),
+phoneNumberController: TextEditingController(),
+idnumberoneController: TextEditingController(),
+isShowPassword; true,
+iagreewiththete; false,
+newaccountone; false,
+,
+);
++
+
+_changePasswordVisibility(
+ChangePasswordVisibilityEvent event,
+Emitter<CreateAccountOneState> emit,
+
+
+)
+
+{
+emit(state. copyWith(isShowPassword: event.value));
+
+}
+
+_changeCheckBox(
+ChangeCheckBoxEvent event,
+Emitter<CreateAccountOneState> emit,
+)}
+emit(state.copywith(iagreewiththete: event.value) );
+}
+
+_changeCheckBox1 (
+ChangeCheckBoxiEvent event,
+Emitter<CreateAccountOneState> emit,
+)}
+emit(state. copywith(newaccountone: event.value) );
+}
+}
+
+
+create_account_one_bloc.dart
+
+
+part of ‘create_account_one_bloc.dart';
+
+/// Abstract class for all events that can be dispatched from the
+///CreateAccountOne widget.
+
+41
+
+/// Events must be immutable and implement the [Equatable] interface.
+/ class CreateAccountOneEvent extends Equatable {
+
+} @override
+
+) List<Object?> get props => [1];
+
+}
+
+ /// Event that is dispatched when the CreateAccountOne widget is first created.
+ class CreateAccountOneInitialEvent extends CreateAccountOneEvent {
+ | @override
+
+ | List<Object?> get props => [];
+
+be,
+
+
+
+ ///Event for changing password visibility IN
+
+ // ignore_for_file: must_be_immutable
+
+ class ChangePasswordVisibilityEvent extends CreateAccountOneEvent {
+ChangePasswordVisibilityEvent({required this.value});
+
+
+ bool value;
+
+@override
+
+ List<Object?> get props => [value];
+
+ }
+
+
+
+ ///Event for changing checkbox
+
+
+
+ // ignore_for_file: must_be_immutable
+
+ class ChangeCheckBoxEyent extends CreateAccountOneEvent {
+ ChangeCheckBoxEvent({required this, value});
+
+
+ bool value;
+
+ @override
+
+
+List<Object?> get props => [value];
+}
+
+
+ ///Event for changing checkbox
+
+ // ignore_for_file: must_be_immutable
+class ChangeCheckBoxiEvent extends CreateAccountOneEvent {
+ ChangeCheckBoxiEvent({required this.value});
+
+ bool value;
+ @override
+
+ List<Object?> get props => [value];
+}
+
+
+create_account_one_state.dart
+
+part of "create_account_one_bloc.dart';
+
+/// Represents the state of CreateAccountOne in the
+
+// ignore_for_file: must_be_immutable
+class CreateAccountOneState extends Equatable {
+CreateAccountOneState({
+this. firstNameController,
+this. lastNameController,
+this.passwordController,
+this. confirmpasswordController,
+
+this.phoneNumberController,
+
+this.idnumbermeController,
+
+this. isShowPagsvord = true,
+
+this.iagreewiththete = false,
+
+this.newaccountone = false,
+
+this.createAccountOneModel0bj,
+});
+
+TextEditingController? firstNameController;
+TextEditingController? lastNameController;
+TextEditingController? passwordController;
+TextEditingController? confirmpasswordController;
+TextEditingController? phoneNumberController;
+TextEditingController? idnumberoneController;
+
+CreateAccountOneModel? createAccountOneModel0bj;
+bool isShowPassword;
+
+bool iagreewiththete;
+
+bool newaccountone;
+
+@override
+
+
+List<Object?> get props => [
+firstNameController,
+lastNameController,
+passwordController,
+confirmpasswordController,
+phoneNumberControtler,
+idnumberoneController,
+isShowPassword,
+iagreewiththete,
+newaccountone,
+createaccountOneMode l0bj,
+
+];
+
+CreateAccountOnstate copyWith({
+TextEditingCoMtoller? firstNameController,
+TextEditingController? lastNameController,
+TextEditingController? passwordController,
+TextEditingController? confirmpasswordController,
+TextEditingController? phoneNumberController,
+
+TextEditingController? idnumberoneController,
+bool? isShowPassword,
+bool? iagreewiththete,
+bool? newaccountone,
+CreateAccountOneModel? createAccountOneModel0bj,
+}){
+return CreateAccountOneState(
+firstNameController: firstNameController ?? this. firstNameController,
+lastNameController: lastNameController ?? this. lastNameControlter,
+passwordController: passwordController ?? this. passwordControlter,
+confirmpasswordController:
+confirsmpasswordController ?? this. confirmpasswordControetter,
+phoneNumberController:
+phoneNumberController ?? this.phoneNumberControtter,
+idnumberoneController;
+idnumberoneController ?? this. idnumberoneControtter,
+isShowPassword; isShowPassword ?? this. isShowPassword,
+iagreewiththete; iagreewiththete ?? this. iagreewiththete,
+newaccountone; newaccountone ?? this.newaccountone,
+createAccountOneMode LObj :
+
+createAccountOneModel0bj ?? this.createAccountOneModel0bj,
+);
+}
+}
+
+create_account_one_model.dart
+
+
+import ‘package: equatable/equatable.dart';
+
+import '../../../core/app_export.dart';
+
+
+/// This class defines the variables used in the [create_account_one_screen],
+/// and is typically used to hold data that is passed between different parts of
+
+class CreateAccountOneModel extends Equatable {
+
+CreateAccountOneModel();
+
+CreateAccountOneModel copyWith() {
+ return CreateAccountOneModel();
+}
+
+@override
+
+List<O0bject?> get props => [];
+
+}
+
+
+
+
